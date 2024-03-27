@@ -1,0 +1,13 @@
+function createCar(manufacturer: string, modelName: string, ...options: Record<string, any>[]): Record<string, any> {
+    const car: Record<string, any> ={
+        manufacturer,
+        modelName,
+
+    };
+    for (const option of options){
+        Object.assign(car, option);
+    }
+    return car;
+}
+const carInfo = createCar("Audi","Carolla GLI",{colour:"Black", year: 2022, features: ["Navigation","23-inch wheel design"]});
+console.log(carInfo)
